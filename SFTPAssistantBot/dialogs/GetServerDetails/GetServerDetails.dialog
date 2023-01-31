@@ -1,0 +1,238 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Tv21dO",
+    "name": "GetInputDetails",
+    "comment": "This dialog is used to get input details of server\n"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "aOO7jO"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "BAb4W7"
+          },
+          "activityProcessed": true,
+          "dialog": "GetSourceDetails",
+          "options": {
+            "serverType": "source"
+          }
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "r9oFKr"
+          },
+          "activityProcessed": true,
+          "dialog": "Confirmation",
+          "options": {
+            "DisplayMessage": "Would you like to proceed ? "
+          },
+          "resultProperty": "dialog.ConfirmToProceed"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "hTySxI"
+          },
+          "condition": "=dialog.ConfirmToProceed==True",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "YWy8Xm"
+              },
+              "activity": "${SendActivity_YWy8Xm()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "eLgh4x"
+              },
+              "activity": "${SendActivity_eLgh4x()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "KcLde8"
+              },
+              "activityProcessed": true,
+              "dialog": "Confirmation",
+              "options": {
+                "DisplayMessage": "Do you want to provide destination server details again?"
+              },
+              "resultProperty": "dialog.ConfirmToProceed"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "GbNHVW"
+              },
+              "condition": "=dialog.ConfirmToProceed==True",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "scnnyj"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GetSourceDetails",
+                  "options": {
+                    "serverType": "destination"
+                  }
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "VPkMzi"
+                  },
+                  "activity": "${SendActivity_VPkMzi()}"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "CU5AM0"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Swbwr1"
+          },
+          "activityProcessed": true,
+          "dialog": "SetSourceServerDetails"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "jekMLI"
+          },
+          "activityProcessed": true,
+          "dialog": "GetSourceDetails",
+          "options": {
+            "serverType": "destination"
+          }
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Hv29wB"
+          },
+          "activityProcessed": true,
+          "dialog": "Confirmation",
+          "options": {
+            "DisplayMessage": "Would you like to proceed ? "
+          },
+          "resultProperty": "dialog.ConfirmToProceed"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "sBBkku"
+          },
+          "condition": "=dialog.ConfirmToProceed==True",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "L4ChDG"
+              },
+              "activity": "${SendActivity_L4ChDG()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jXgDkC"
+              },
+              "activity": "${SendActivity_jXgDkC()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "2AHcEz"
+              },
+              "activityProcessed": true,
+              "dialog": "Confirmation",
+              "options": {
+                "DisplayMessage": "Do you want to provide source server details ?"
+              },
+              "resultProperty": "dialog.ConfirmToProceed"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "x3OtcV"
+              },
+              "condition": "=dialog.ConfirmToProceed==True",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4kkcuY"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GetSourceDetails",
+                  "options": {
+                    "serverType": "source"
+                  }
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "08K8rE"
+                  },
+                  "activity": "${SendActivity_08K8rE()}"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "2ZgmbZ"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "3IvojH"
+          },
+          "activityProcessed": true,
+          "dialog": "SetDestinationServerDetails"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "1NPWPH"
+          },
+          "value": "="
+        }
+      ]
+    }
+  ],
+  "generator": "GetServerDetails.lg",
+  "recognizer": "GetServerDetails.lu.qna",
+  "id": "GetServerDetails"
+}

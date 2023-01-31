@@ -1,0 +1,48 @@
+[import](common.lg)
+
+# SendActivity_ErrorOccured()
+[Activity
+    Text = ${SendActivity_ErrorOccured_text()}
+]
+
+# SendActivity_ErrorOccured_text()
+- Oops, looks like I'm stuck. Can you try to ask me in a different way?
+- Looks like I'm all mixed up. Let's try asking again, but maybe rephrase your request?
+- Sorry, it looks like something went wrong. Can you please try again?
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that
+- I'm not sure I understand. Can you please try again?
+- Hmm, I don't understand. Can you try to ask me in a different way. 
+- I didn't get that. Would you mind rephrasing and try it again.
+
+# SendActivity_S6YyDQ()
+[Activity
+    Text = ${SendActivity_S6YyDQ_text()}
+]
+
+# SendActivity_S6YyDQ_text()
+- Okay! Sure  Let me ask some input details for SFTP Setup.
+- Sure!  Let me ask some input details for SFTP Setup.
+# SendActivity_xw6aaj()
+[Activity
+    Text = ${SendActivity_xw6aaj_text()}
+]
+
+# SendActivity_xw6aaj_text()
+- 🖐️ Hello ! How can I help?
+- 🖐️ Welcome ! How can I help you today?
+- 🖐️ Hello ! What can I help with?
+- 🖐️ Good to see you . What do you want to do today?
+- 🖐️ Hey, there! Let's get started.
+# SendActivity_n58ymw_text()
+- Okay! sure
+# SendActivity_n58ymw()
+[Activity
+    Text = ${SendActivity_n58ymw_text()}
+]

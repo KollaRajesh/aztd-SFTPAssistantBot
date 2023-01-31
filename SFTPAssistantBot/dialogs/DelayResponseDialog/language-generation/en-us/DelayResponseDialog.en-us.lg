@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# SendActivity_SMvJNJ()
+[Activity 
+	Type=${"delay"}
+    Value=${dialog.delayTime}
+    ]

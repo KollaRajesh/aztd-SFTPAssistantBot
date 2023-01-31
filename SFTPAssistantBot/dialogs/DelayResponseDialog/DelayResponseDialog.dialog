@@ -1,0 +1,49 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3EEDWx",
+    "name": "DelayResponseDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Rze2UJ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "rG2qMt"
+          },
+          "condition": "=dialog.delayTime==null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "SCz6Ek"
+              },
+              "property": "dialog.delayTime",
+              "value": "10000"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SMvJNJ"
+          },
+          "activity": "${SendActivity_SMvJNJ()}"
+        }
+      ]
+    }
+  ],
+  "generator": "DelayResponseDialog.lg",
+  "recognizer": "DelayResponseDialog.lu.qna",
+  "id": "DelayResponseDialog"
+}

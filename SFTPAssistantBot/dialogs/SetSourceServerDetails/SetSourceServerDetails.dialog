@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "4AFyJ1",
+    "name": "SetSourceServerDetails",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "GZCw5G"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "qoYssb"
+          },
+          "assignments": [
+            {
+              "value": "=user.hostName",
+              "property": "user.sourceHostName"
+            },
+            {
+              "value": "=user.folderPath",
+              "property": "user.sourcefolderPath"
+            },
+            {
+              "value": "=user.portNo",
+              "property": "user.sourcePortNo"
+            },
+            {
+              "value": "=user.usrName",
+              "property": "user.sourceUsrName"
+            },
+            {
+              "value": "=user.pwd",
+              "property": "user.sourcePwd"
+            },
+            {
+              "property": "user.sourceprivateKeyFile",
+              "value": "=user.privateKeyFile"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "OezHEB"
+          },
+          "activityProcessed": true,
+          "dialog": "DelteUserServerInfoProperties"
+        }
+      ]
+    }
+  ],
+  "generator": "SetSourceServerDetails.lg",
+  "recognizer": "SetSourceServerDetails.lu.qna",
+  "id": "SetSourceServerDetails"
+}

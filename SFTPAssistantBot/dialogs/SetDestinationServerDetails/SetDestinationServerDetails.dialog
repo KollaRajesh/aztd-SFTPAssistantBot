@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "YAPHYc",
+    "name": "SetDestinationServerDetails",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Z9arCG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "uwTl24"
+          },
+          "assignments": [
+            {
+              "value": "=user.hostName",
+              "property": "user.destinationHostName"
+            },
+            {
+              "value": "=user.folderPath",
+              "property": "user.destinationfolderPath"
+            },
+            {
+              "value": "=user.portNo",
+              "property": "user.destinationPortNo"
+            },
+            {
+              "value": "=user.usrName",
+              "property": "user.destinationUsrName"
+            },
+            {
+              "value": "=user.pwd",
+              "property": "user.destinationPwd"
+            },
+            {
+              "value": "=user.privateKeyFile",
+              "property": "user.destinationprivateKeyFile"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "oareLy"
+          },
+          "activityProcessed": true,
+          "dialog": "DelteUserServerInfoProperties"
+        }
+      ]
+    }
+  ],
+  "generator": "SetDestinationServerDetails.lg",
+  "recognizer": "SetDestinationServerDetails.lu.qna",
+  "id": "SetDestinationServerDetails"
+}

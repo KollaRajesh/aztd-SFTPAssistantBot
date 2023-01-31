@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_SFTPAssistantBot",
+  "recognizers": {
+    "en-us": "SFTPAssistantBot.en-us.lu",
+    "": "SFTPAssistantBot.en-us.lu"
+  }
+}

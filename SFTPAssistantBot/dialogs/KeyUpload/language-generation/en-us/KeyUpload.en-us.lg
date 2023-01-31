@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# AttachmentInput_Prompt_yFFBYR_text()
+- Please  upload private Key file for ${dialog.serverType}server 
+# AttachmentInput_Prompt_yFFBYR()
+[Activity
+    Text = ${AttachmentInput_Prompt_yFFBYR_text()}
+]
+
+# SendActivity_WrMLMA_text()
+- ```contentUrl : ${dialog.privateKeyFile.contentUrl}
+contentType: ${dialog.privateKeyFile.contentType}
+name: ${dialog.privateKeyFile.name}```
+# SendActivity_WrMLMA()
+[Activity
+    Text = ${SendActivity_WrMLMA_text()}
+]
+
+# SendActivity_cb5i92_text()
+- ${dialog.privateKeyFile}
+# SendActivity_cb5i92()
+[Activity
+    Text = ${SendActivity_cb5i92_text()}
+]

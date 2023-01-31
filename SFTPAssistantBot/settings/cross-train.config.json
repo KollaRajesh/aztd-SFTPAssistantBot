@@ -1,0 +1,25 @@
+{
+  "SFTPAssistantBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "WelcomeDialog.en-us"
+      ],
+      "Cancel": [
+        "CancelDialog.en-us"
+      ],
+      "Help": [
+        "HelpDialog.en-us"
+      ],
+      "SFTPAssistance": [
+        "Confirmation.en-us",
+        "GetServerDetails.en-us"
+      ],
+      "ResponseToGreetings": [
+        "HelpDialog.en-us",
+        "DelayResponseDialog.en-us",
+        "KeyUpload.en-us"
+      ]
+    }
+  }
+}

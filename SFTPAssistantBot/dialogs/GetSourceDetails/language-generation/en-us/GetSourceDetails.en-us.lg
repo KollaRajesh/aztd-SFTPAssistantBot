@@ -1,0 +1,76 @@
+[import](common.lg)
+
+# TextInput_Prompt_NlPvQ9()
+[Activity
+    Text = ${TextInput_Prompt_NlPvQ9_text()}
+]
+
+# TextInput_Prompt_NlPvQ9_text()
+- May I know source server folder path
+# TextInput_Prompt_rAZHJL()
+[Activity
+    Text = ${TextInput_Prompt_rAZHJL_text()}
+]
+
+# TextInput_Prompt_rAZHJL_text()
+- May I know ${dialog.serverType} server port
+# TextInput_Prompt_RzLHtU()
+[Activity
+    Text = ${TextInput_Prompt_RzLHtU_text()}
+]
+
+# TextInput_Prompt_RzLHtU_text()
+- May I know ${dialog.serverType} server password
+# TextInput_Prompt_2LSoJ2_text()
+- May I know ${dialog.serverType} server user name
+# TextInput_Prompt_2LSoJ2()
+[Activity
+    Text = ${TextInput_Prompt_2LSoJ2_text()}
+]
+
+# TextInput_Prompt_eAd4Ln_text()
+- May I know ${dialog.serverType} server hostname ?
+- May I know hostname of ${dialog.serverType} server ?
+- What is the hostname of ${dialog.serverType} server ?
+- Please enter hostname for ${dialog.serverType} server ?
+- Please type host name for ${dialog.serverType} server
+# TextInput_Prompt_eAd4Ln()
+[Activity
+    Text = ${TextInput_Prompt_eAd4Ln_text()}
+]
+
+# TextInput_UnrecognizedPrompt_eAd4Ln_text()
+- Sorry , I do not understand ${this.value} , Please specify a valid hostname of ${dialog.serverType} server.
+# TextInput_UnrecognizedPrompt_eAd4Ln()
+[Activity
+    Text = ${TextInput_UnrecognizedPrompt_eAd4Ln_text()}
+]
+
+# TextInput_InvalidPrompt_eAd4Ln_text()
+- - Sorry , '${this.value} ' is not valid . Please enter valid hostname of ${dialog.serverType} server
+- - Sorry , '${this.value} ' is not valid . Please type valid host name of ${dialog.serverType} server
+# TextInput_InvalidPrompt_eAd4Ln()
+[Activity
+    Text = ${TextInput_InvalidPrompt_eAd4Ln_text()}
+]
+
+# AttachmentInput_Prompt_xWRtWX()
+[Activity
+    Text = ${AttachmentInput_Prompt_xWRtWX_text()}
+]
+
+# AttachmentInput_Prompt_xWRtWX_text()
+- Please  upload private Key file for ${dialog.serverType}server 
+# SendActivity_OQBeKw()
+[Activity
+    Text = ${SendActivity_OQBeKw_text()}
+]
+
+# SendActivity_OQBeKw_text()
+- ```Thanks for providing  source server details 
+HostName :${user.hostName}
+Folder Path: ${user.folderPath}
+PortNumber:  ${user.portNo}
+UserName:${user.usrName}
+Password: ${user.pwd}
+PrivateKeyFile:${user.privateKeyFile.name}```

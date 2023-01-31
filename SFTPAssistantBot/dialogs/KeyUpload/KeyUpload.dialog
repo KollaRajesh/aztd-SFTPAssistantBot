@@ -1,0 +1,54 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "laqlKe",
+    "name": "KeyUpload",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "e7ncNU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "yFFBYR"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${AttachmentInput_Prompt_yFFBYR()}",
+          "property": "dialog.privateKeyFile"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WrMLMA"
+          },
+          "activity": "${SendActivity_WrMLMA()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cb5i92"
+          },
+          "activity": "${SendActivity_cb5i92()}"
+        }
+      ]
+    }
+  ],
+  "generator": "KeyUpload.lg",
+  "recognizer": "KeyUpload.lu.qna",
+  "id": "KeyUpload"
+}

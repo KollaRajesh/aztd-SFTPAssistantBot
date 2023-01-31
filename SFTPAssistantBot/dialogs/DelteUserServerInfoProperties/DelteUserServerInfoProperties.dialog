@@ -1,0 +1,39 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "m5LRTZ",
+    "name": "DelteUserServerInfoProperties",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "4j0BNp"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "TzTjYW"
+          },
+          "properties": [
+            "user.hostName",
+            "user.folderPath",
+            "user.portNo",
+            "user.usrName",
+            "user.pwd",
+            "user.privateKeyFile"
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "DelteUserServerInfoProperties.lg",
+  "recognizer": "DelteUserServerInfoProperties.lu.qna",
+  "id": "DelteUserServerInfoProperties"
+}

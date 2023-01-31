@@ -1,0 +1,49 @@
+[import](common.lg)
+
+# SendActivity_eLgh4x_text()
+- Oh , Okay!
+- Okay!
+- Ok!
+- Alright!
+# SendActivity_eLgh4x()
+[Activity
+    Text = ${SendActivity_eLgh4x_text()}
+]
+
+# SendActivity_VPkMzi_text()
+- Okay! 
+# SendActivity_VPkMzi()
+[Activity
+    Text = ${SendActivity_VPkMzi_text()}
+]
+
+# SendActivity_YWy8Xm_text()
+- Thank you for confirmation!
+# SendActivity_YWy8Xm()
+[Activity
+    Text = ${SendActivity_YWy8Xm_text()}
+]
+
+# SendActivity_L4ChDG_text()
+- Thank you for confirmation!
+# SendActivity_L4ChDG()
+[Activity
+    Text = ${SendActivity_L4ChDG_text()}
+]
+
+# SendActivity_jXgDkC_text()
+- Oh , Okay!
+- Okay!
+- Ok!
+- Alright!
+# SendActivity_jXgDkC()
+[Activity
+    Text = ${SendActivity_jXgDkC_text()}
+]
+
+# SendActivity_08K8rE_text()
+- Okay! 
+# SendActivity_08K8rE()
+[Activity
+    Text = ${SendActivity_08K8rE_text()}
+]

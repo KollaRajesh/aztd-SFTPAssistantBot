@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_DelayResponseDialog",
+  "applicationId": "=settings.luis.DelayResponseDialog_en_us_lu.appId",
+  "version": "=settings.luis.DelayResponseDialog_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

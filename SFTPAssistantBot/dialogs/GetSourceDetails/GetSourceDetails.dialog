@@ -1,0 +1,176 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "oJu9UX",
+    "name": "GetServerDetails",
+    "comment": "This dialog is used to capture server details "
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "yLvEXF"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ZSNEph"
+          },
+          "activityProcessed": true,
+          "dialog": "DelteUserServerInfoProperties"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "eAd4Ln"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "invalidPrompt": "${TextInput_InvalidPrompt_eAd4Ln()}",
+          "prompt": "${TextInput_Prompt_eAd4Ln()}",
+          "property": "dialog.hostName",
+          "outputFormat": "=trim(this.value)",
+          "validations": [
+            "=length(trim(this.value))>0",
+            "=and(length(trim(this.value))>0,length(trim(this.value))<=15)"
+          ],
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_eAd4Ln()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "NlPvQ9"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_NlPvQ9()}",
+          "property": "dialog.folderPath",
+          "outputFormat": "=trim(this.value)"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "rAZHJL"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_rAZHJL()}",
+          "property": "dialog.portNo",
+          "outputFormat": "=trim(this.value)"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "2LSoJ2"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_2LSoJ2()}",
+          "property": "dialog.UsrName",
+          "outputFormat": "=trim(this.value)"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "RzLHtU"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_RzLHtU()}",
+          "property": "dialog.Pwd",
+          "outputFormat": "=trim(this.value)"
+        },
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "xWRtWX"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${AttachmentInput_Prompt_xWRtWX()}",
+          "property": "dialog.privateKeyFile"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "yWYzPV"
+          },
+          "assignments": [
+            {
+              "value": "=dialog.hostName",
+              "property": "user.hostName"
+            },
+            {
+              "value": "=dialog.folderPath",
+              "property": "user.folderPath"
+            },
+            {
+              "property": "user.portNo",
+              "value": "=dialog.portNo"
+            },
+            {
+              "value": "=dialog.UsrName",
+              "property": "user.usrName"
+            },
+            {
+              "value": "=dialog.Pwd",
+              "property": "user.pwd"
+            },
+            {
+              "property": "user.privateKeyFile",
+              "value": "=dialog.privateKeyFile"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OQBeKw"
+          },
+          "activity": "${SendActivity_OQBeKw()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "8vjko7"
+          },
+          "value": "=json(diadialog.serverObj)"
+        }
+      ]
+    }
+  ],
+  "generator": "GetSourceDetails.lg",
+  "recognizer": "GetSourceDetails.lu.qna",
+  "id": "GetSourceDetails"
+}

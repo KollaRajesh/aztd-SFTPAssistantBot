@@ -1,0 +1,72 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "udsykm",
+    "name": "Confirmation",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "33w1HE"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Sn4X2d"
+          },
+          "condition": "=or(dialog.message==null, length(trim(dialog.message))==0)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "GW31ab"
+              },
+              "property": "dialog.message",
+              "value": "Can you proceed to process?"
+            }
+          ],
+          "elseActions": []
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "DrhYlA"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "dialog.ConfirmToProceed",
+          "prompt": "${ConfirmInput_Prompt_DrhYlA()}",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "8ePn8F"
+          },
+          "value": "= bool(dialog.ConfirmToProceed)"
+        }
+      ]
+    }
+  ],
+  "generator": "Confirmation.lg",
+  "recognizer": "Confirmation.lu.qna",
+  "id": "Confirmation"
+}

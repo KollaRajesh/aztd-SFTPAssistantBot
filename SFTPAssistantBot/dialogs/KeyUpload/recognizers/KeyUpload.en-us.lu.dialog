@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_KeyUpload",
+  "applicationId": "=settings.luis.KeyUpload_en_us_lu.appId",
+  "version": "=settings.luis.KeyUpload_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

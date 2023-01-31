@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_DrhYlA()
+[Activity
+    Text = ${ConfirmInput_Prompt_DrhYlA_text()}
+]
+
+# ConfirmInput_Prompt_DrhYlA_text()
+- ${dialog.message}
