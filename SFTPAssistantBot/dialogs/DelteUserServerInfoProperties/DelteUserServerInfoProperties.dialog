@@ -27,7 +27,8 @@
             "user.portNo",
             "user.usrName",
             "user.pwd",
-            "user.privateKeyFile"
+            "user.keyFile",
+            "user.isEncryptionRequired"
           ]
         }
       ]

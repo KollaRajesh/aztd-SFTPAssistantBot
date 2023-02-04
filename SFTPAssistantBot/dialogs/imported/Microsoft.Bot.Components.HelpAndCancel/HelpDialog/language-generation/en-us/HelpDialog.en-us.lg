@@ -11,7 +11,10 @@
 - For now, I can only help you with simple questions.
 
 > Imported: 95949fcc5eb2077f9cffd10817a11340
-# SendActivity_P6bZz1()
--
-# SendActivity_4DyDle()
--
+# SendActivity_yXDUz6()
+[Activity
+    Text = ${SendActivity_yXDUz6_text()}
+]
+
+# SendActivity_yXDUz6_text()
+- I am SFTP Assistant bot to help on deployment of resources for SFTP setup

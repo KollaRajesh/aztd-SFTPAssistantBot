@@ -107,58 +107,147 @@
           "outputFormat": "=trim(this.value)"
         },
         {
-          "$kind": "Microsoft.AttachmentInput",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "xWRtWX"
+            "id": "lxQ6eK"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "prompt": "${AttachmentInput_Prompt_xWRtWX()}",
-          "property": "dialog.privateKeyFile"
+          "activityProcessed": true,
+          "dialog": "Confirmation",
+          "options": {
+            "message": "Do you want to encrypt ${dialog.serverType} files? "
+          },
+          "resultProperty": "dialog.ConfirmToProceed"
         },
         {
-          "$kind": "Microsoft.SetProperties",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "yWYzPV"
+            "id": "xoC9SF"
           },
-          "assignments": [
+          "condition": "=dialog.ConfirmToProceed==True",
+          "actions": [
             {
-              "value": "=dialog.hostName",
-              "property": "user.hostName"
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "CHssgG"
+              },
+              "property": "dialog.isEncryptionRequired",
+              "value": true
             },
             {
-              "value": "=dialog.folderPath",
-              "property": "user.folderPath"
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "2PJ0WN"
+              },
+              "activity": "${SendActivity_2PJ0WN()}"
             },
             {
-              "property": "user.portNo",
-              "value": "=dialog.portNo"
+              "$kind": "Microsoft.AttachmentInput",
+              "$designer": {
+                "id": "S2RADY"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${AttachmentInput_Prompt_S2RADY()}",
+              "property": "dialog.keyFile"
             },
             {
-              "value": "=dialog.UsrName",
-              "property": "user.usrName"
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "Gvi8NH"
+              },
+              "assignments": [
+                {
+                  "value": "=dialog.hostName",
+                  "property": "user.hostName"
+                },
+                {
+                  "value": "=dialog.folderPath",
+                  "property": "user.folderPath"
+                },
+                {
+                  "property": "user.portNo",
+                  "value": "=dialog.portNo"
+                },
+                {
+                  "value": "=dialog.UsrName",
+                  "property": "user.usrName"
+                },
+                {
+                  "value": "=dialog.Pwd",
+                  "property": "user.pwd"
+                },
+                {
+                  "property": "user.isEncryptionRequired",
+                  "value": "=dialog.isEncryptionRequired"
+                },
+                {
+                  "property": "user.keyFile",
+                  "value": "=dialog.keyFile"
+                }
+              ]
             },
             {
-              "value": "=dialog.Pwd",
-              "property": "user.pwd"
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "doba7O"
+              },
+              "activity": "${SendActivity_doba7O()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "IEt7yr"
+              },
+              "property": "dialog.isEncryptionRequired",
+              "value": false
             },
             {
-              "property": "user.privateKeyFile",
-              "value": "=dialog.privateKeyFile"
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "BoD4m2"
+              },
+              "assignments": [
+                {
+                  "value": "=dialog.hostName",
+                  "property": "user.hostName"
+                },
+                {
+                  "value": "=dialog.folderPath",
+                  "property": "user.folderPath"
+                },
+                {
+                  "property": "user.portNo",
+                  "value": "=dialog.portNo"
+                },
+                {
+                  "value": "=dialog.UsrName",
+                  "property": "user.usrName"
+                },
+                {
+                  "value": "=dialog.Pwd",
+                  "property": "user.pwd"
+                },
+                {
+                  "property": "user.isEncryptionRequired",
+                  "value": "=dialog.isEncryptionRequired"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "O0pKYD"
+              },
+              "activity": "${SendActivity_O0pKYD()}"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "OQBeKw"
-          },
-          "activity": "${SendActivity_OQBeKw()}"
         },
         {
           "$kind": "Microsoft.EndDialog",

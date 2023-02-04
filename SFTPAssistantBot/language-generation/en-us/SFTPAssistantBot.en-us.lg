@@ -46,3 +46,27 @@
 [Activity
     Text = ${SendActivity_n58ymw_text()}
 ]
+
+# SendActivity_bpJxvI()
+[Activity
+    Text = ${SendActivity_bpJxvI_text()}
+]
+
+# SendActivity_bpJxvI_text()
+- Result :${user.result}
+# SendActivity_ipg0GV()
+[Activity
+    Text = ${SendActivity_ipg0GV_text()}
+]
+
+# SendActivity_ipg0GV_text()
+- ```Details for deployment  has been stored successfully. 
+
+Deployment will be triggered now```
+# SendActivity_cvIYu1()
+[Activity
+    Text = ${SendActivity_cvIYu1_text()}
+]
+
+# SendActivity_cvIYu1_text()
+- hi

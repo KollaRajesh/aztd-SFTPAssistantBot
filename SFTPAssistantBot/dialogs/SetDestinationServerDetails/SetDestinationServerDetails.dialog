@@ -43,8 +43,33 @@
               "property": "user.destinationPwd"
             },
             {
-              "value": "=user.privateKeyFile",
-              "property": "user.destinationprivateKeyFile"
+              "value": "=user.isEncryptionRequired",
+              "property": "user.isEncryptionRequiredAtDestination"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "ppZvrQ"
+          },
+          "condition": "=user.isEncryptionRequired",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "3qQe3v"
+              },
+              "assignments": [
+                {
+                  "property": "user.destinationPublicKeyName",
+                  "value": "=user.keyFile.name"
+                },
+                {
+                  "property": "user.destinationPublicKeyContentUrl",
+                  "value": "=user.keyFile.contentUrl"
+                }
+              ]
             }
           ]
         },

@@ -43,8 +43,33 @@
               "property": "user.sourcePwd"
             },
             {
-              "property": "user.sourceprivateKeyFile",
-              "value": "=user.privateKeyFile"
+              "property": "user.isEncryptionRequiredAtSource",
+              "value": "=user.isEncryptionRequired"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "zg7UGZ"
+          },
+          "condition": "=user.isEncryptionRequired",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "bcdXOL"
+              },
+              "assignments": [
+                {
+                  "property": "user.sourcePrivateKeyName",
+                  "value": "=user.keyFile.name"
+                },
+                {
+                  "property": "user.sourcePrivateKeyContentUrl",
+                  "value": "=user.keyFile.contentUrl"
+                }
+              ]
             }
           ]
         },

@@ -19,9 +19,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "P6bZz1"
+            "id": "yXDUz6"
           },
-          "activity": "${SendActivity_P6bZz1()}"
+          "activity": "${SendActivity_yXDUz6()}"
         },
         {
           "$kind": "Microsoft.BeginDialog",
@@ -46,8 +46,7 @@
               "$kind": "Microsoft.SendActivity",
               "$designer": {
                 "id": "4DyDle"
-              },
-              "activity": "${SendActivity_4DyDle()}"
+              }
             },
             {
               "$kind": "Microsoft.EndDialog",

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "Upload SFTP Details into Blob Storage",
+  "description": "Custom Actions for uploading SFTP Blob into Azure Blob Storage",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+
+    "PartnerName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Partner Name",
+      "description": "Partner Name for provisioning SFTP setup"
+    },
+    "SourceHostName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Source HostName",
+      "description": "Hostname for source system"
+    },
+
+    "SourcePortNumber": {
+      "$ref": "schema:#/definitions/integerExpression",
+      "title": "Source PortNumber",
+      "description": "Port number for source system"
+    },
+    "SourceUserName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Source UserName",
+      "description": "User name for source system"
+    },
+
+    "SourcePassword": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Source Password",
+      "description": "Password for source system"
+    },
+
+    "SourceSharedFolder": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Source SharedFolder",
+      "description": "Shared folder for source system"
+    },
+
+    "IsEncryptionRequiredForSource": {
+      "$ref": "schema:#/definitions/booleanExpression",
+      "title": "IsEncryptionRequiredForSource",
+      "description": "Is encryption required for source system"
+    },
+
+    "PrivateKeyName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "PrivateKey Name",
+      "description": "Private key name for source system  to encrypt files at destination system"
+     },
+
+    "PrivateKeyURL": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "PrivateKey URL",
+      "description": "Private key URL for source system to encrypt files at destination system"
+    },
+
+    "DestinationHostName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Destination HostName",
+      "description": "HostName for destination system"
+    },
+
+    "DestinationPortNumber": {
+      "$ref": "schema:#/definitions/integerExpression",
+      "title": "Destination PortNumber",
+      "description": "Port Number for destination system"
+    },
+    "DestinationUserName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Destination UserName",
+      "description": "User name for destination system"
+    },
+
+    "DestinationPassword": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Destination Password",
+      "description": "Password for destination system"
+    },
+
+    "DestinationSharedFolder": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Destination SharedFolder",
+      "description": "Shared folder for destination system"
+    },
+
+    "IsEncryptionRequiredForDestination": {
+      "$ref": "schema:#/definitions/booleanExpression",
+      "title": "IsEncryptionRequiredForDestination",
+      "description": "Is encryption required for destination system"
+    },
+
+    "PublicKeyName": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "PublicKey Name",
+      "description": "Public key name for destination system to encrypt files at destination system"
+    },
+
+    "PublicKeyURL": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "PublicKey URL",
+      "description": "Public key content URL for destination system to encrypt files at destination system"
+    },
+
+    "resultProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Result",
+      "description": "Value from callers memory to store the result"
+    }
+  }
+}

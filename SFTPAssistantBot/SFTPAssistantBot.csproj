@@ -18,4 +18,7 @@
     <PackageReference Include="Microsoft.Bot.Components.HelpAndCancel" Version="1.3.0" />
     <PackageReference Include="Microsoft.Bot.Components.Welcome" Version="1.3.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AzureStorageCustomAction\AzureStorageCustomAction.csproj" />
+  </ItemGroup>
 </Project>

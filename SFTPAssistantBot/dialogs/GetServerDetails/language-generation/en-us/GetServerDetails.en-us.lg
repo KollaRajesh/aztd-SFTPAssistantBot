@@ -47,3 +47,12 @@
 [Activity
     Text = ${SendActivity_08K8rE_text()}
 ]
+
+# TextInput_Prompt_a8WfrQ()
+[Activity
+    Text = ${TextInput_Prompt_a8WfrQ_text()}
+]
+
+# TextInput_Prompt_a8WfrQ_text()
+- What is the name of the partner for SFTP setup?
+- Please tell me name of the partner to SFTP resource setup?

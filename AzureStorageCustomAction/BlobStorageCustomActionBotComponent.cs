@@ -3,14 +3,14 @@ using Microsoft.Bot.Builder.Dialogs.Declarative;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AzureBlobStorage
+namespace AzureStorageCustomAction
 {
-    public class AzureBlobStorageBotComponent : BotComponent
+    public class BlobStorageCustomActionBotComponent : BotComponent
     {
         public override void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<DeclarativeType>(sp =>
-                new DeclarativeType<AzureBlobStorageDialog>(AzureBlobStorageDialog.Kind));
+                new DeclarativeType<BlobStorageCustomAction>(BlobStorageCustomAction.Kind));
         }
     }
 }

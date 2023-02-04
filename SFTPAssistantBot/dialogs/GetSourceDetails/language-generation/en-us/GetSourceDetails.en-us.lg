@@ -6,7 +6,7 @@
 ]
 
 # TextInput_Prompt_NlPvQ9_text()
-- May I know source server folder path
+- May I know ${dialog.serverType} server shared folder path
 # TextInput_Prompt_rAZHJL()
 [Activity
     Text = ${TextInput_Prompt_rAZHJL_text()}
@@ -54,23 +54,49 @@
     Text = ${TextInput_InvalidPrompt_eAd4Ln_text()}
 ]
 
-# AttachmentInput_Prompt_xWRtWX()
+# SendActivity_2PJ0WN_text()
+- Thank you for confirmation!
+- Alright!
+- Ok!
+- Okay!
+# SendActivity_2PJ0WN()
 [Activity
-    Text = ${AttachmentInput_Prompt_xWRtWX_text()}
+    Text = ${SendActivity_2PJ0WN_text()}
 ]
 
-# AttachmentInput_Prompt_xWRtWX_text()
-- Please  upload private Key file for ${dialog.serverType}server 
-# SendActivity_OQBeKw()
+# AttachmentInput_Prompt_S2RADY_text()
+- Please  upload ${dialog.keyFileName} file for ${dialog.serverType} server encryption
+# AttachmentInput_Prompt_S2RADY()
 [Activity
-    Text = ${SendActivity_OQBeKw_text()}
+    Text = ${AttachmentInput_Prompt_S2RADY_text()}
 ]
 
-# SendActivity_OQBeKw_text()
-- ```Thanks for providing  source server details 
+# SendActivity_doba7O_text()
+- ```Thanks for providing  ${dialog.serverType} server details 
+
 HostName :${user.hostName}
-Folder Path: ${user.folderPath}
-PortNumber:  ${user.portNo}
-UserName:${user.usrName}
+Shared Folder Path: ${user.folderPath}
+Port number:  ${user.portNo}
+User name:${user.usrName}
 Password: ${user.pwd}
-PrivateKeyFile:${user.privateKeyFile.name}```
+Is encryption required for ${dialog.serverType} files : ${user.isEncryptionRequired}
+${dialog.keyFileName}:${user.keyFile.name}```
+# SendActivity_doba7O()
+[Activity
+    Text = ${SendActivity_doba7O_text()}
+]
+
+# SendActivity_O0pKYD_text()
+- ```Thanks for providing  ${dialog.serverType} server details 
+
+HostName :${user.hostName}
+Shared Folder Path: ${user.folderPath}
+Port number:  ${user.portNo}
+User name:${user.usrName}
+Password: ${user.pwd}
+Is encryption required for ${dialog.serverType} files : ${user.isEncryptionRequired}
+```
+# SendActivity_O0pKYD()
+[Activity
+    Text = ${SendActivity_O0pKYD_text()}
+]

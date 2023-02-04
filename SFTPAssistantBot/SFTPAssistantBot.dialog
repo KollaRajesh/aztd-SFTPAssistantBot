@@ -88,6 +88,19 @@
       "intent": "Help",
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cvIYu1"
+          },
+          "activity": "${SendActivity_cvIYu1()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "IDwVtz"
+          }
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "B0NP8m",
@@ -197,6 +210,58 @@
               },
               "activityProcessed": true,
               "dialog": "GetServerDetails"
+            },
+            {
+              "$kind": "BlobStorageCustomAction",
+              "$designer": {
+                "id": "uHAuXo"
+              }
+            },
+            {
+              "$kind": "BlobStorageCustomAction",
+              "$designer": {
+                "id": "Mkvk4I"
+              },
+              "PartnerName": "=user.partnerName",
+              "SourceHostName": "=user.sourceHostName",
+              "SourcePortNumber": "=user.sourcePortNo",
+              "SourceUserName": "=user.sourceUsrName",
+              "SourcePassword": "=user.sourcePwd",
+              "SourceSharedFolder": "=user.sourcefolderPath",
+              "IsEncryptionRequiredForSource": "=user.isEncryptionRequiredAtSource",
+              "PrivateKeyName": "=user.sourcePrivateKeyName",
+              "PrivateKeyURL": "=user.sourcePrivateKeyContentUrl",
+              "DestinationHostName": "=user.destinationHostName",
+              "DestinationPortNumber": "=user.destinationPortNo",
+              "DestinationUserName": "=user.destinationUsrName",
+              "DestinationPassword": "=user.destinationPwd",
+              "DestinationSharedFolder": "=user.destinationfolderPath",
+              "PublicKeyName": "=user.destinationPublicKeyName",
+              "PublicKeyURL": "=user.destinationPublicKeyContentUrl",
+              "resultProperty": "user.result",
+              "IsEncryptionRequiredForDestination": "=user.isEncryptionRequiredAtDestination"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "bpJxvI"
+              },
+              "activity": "${SendActivity_bpJxvI()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "5Lb9KA"
+              },
+              "activityProcessed": true,
+              "dialog": "ClearUserInfo"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ipg0GV"
+              },
+              "activity": "${SendActivity_ipg0GV()}"
             }
           ],
           "elseActions": [
@@ -208,6 +273,12 @@
               "activity": "${SendActivity_n58ymw()}"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "al5PJT"
+          }
         }
       ]
     },

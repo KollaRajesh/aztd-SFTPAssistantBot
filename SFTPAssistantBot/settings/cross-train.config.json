@@ -13,7 +13,8 @@
       ],
       "SFTPAssistance": [
         "Confirmation.en-us",
-        "GetServerDetails.en-us"
+        "GetServerDetails.en-us",
+        "ClearUserInfo.en-us"
       ],
       "ResponseToGreetings": [
         "HelpDialog.en-us",

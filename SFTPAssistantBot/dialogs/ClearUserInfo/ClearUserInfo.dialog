@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "MBbpZb",
+    "name": "ClearUserInfo",
+    "comment": "Clear data in User context"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "a6fv3j"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "pPBkXV"
+          },
+          "properties": [
+            "user.partnerName",
+            "user.hostName",
+            "user.folderPath",
+            "user.portNo",
+            "user.isEncryptionRequired",
+            "user.pwd",
+            "user.usrName",
+            "user.keyFile",
+            "user.sourceHostName",
+            "user.sourcePortNo",
+            "user.sourcefolderPath",
+            "user.sourceUsrName",
+            "user.sourcePwd",
+            "user.isEncryptionRequiredAtSource",
+            "user.sourcePrivateKeyName",
+            "user.sourcePrivateKeyContentUrl",
+            "user.destinationHostName",
+            "user.destinationPortNo",
+            "user.destinationfolderPath",
+            "user.destinationUsrName",
+            "user.destinationPwd",
+            "user.isEncryptionRequiredAtDestination",
+            "user.destinationPublicKeyName",
+            "user.destinationPublicKeyContentUrl"
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "ClearUserInfo.lg",
+  "recognizer": "ClearUserInfo.lu.qna",
+  "id": "ClearUserInfo"
+}

@@ -17,6 +17,21 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "a8WfrQ"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_a8WfrQ()}",
+          "property": "user.partnerName"
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "BAb4W7"
@@ -24,7 +39,8 @@
           "activityProcessed": true,
           "dialog": "GetSourceDetails",
           "options": {
-            "serverType": "source"
+            "serverType": "source",
+            "keyFileName": "private key "
           }
         },
         {
@@ -35,7 +51,7 @@
           "activityProcessed": true,
           "dialog": "Confirmation",
           "options": {
-            "DisplayMessage": "Would you like to proceed ? "
+            "message": "Would you like to proceed ? "
           },
           "resultProperty": "dialog.ConfirmToProceed"
         },
@@ -70,7 +86,7 @@
               "activityProcessed": true,
               "dialog": "Confirmation",
               "options": {
-                "DisplayMessage": "Do you want to provide destination server details again?"
+                "message": "Do you want to provide source server details again?"
               },
               "resultProperty": "dialog.ConfirmToProceed"
             },
@@ -89,7 +105,8 @@
                   "activityProcessed": true,
                   "dialog": "GetSourceDetails",
                   "options": {
-                    "serverType": "destination"
+                    "serverType": "source",
+                    "keyFileName": "private key"
                   }
                 }
               ],
@@ -127,7 +144,8 @@
           "activityProcessed": true,
           "dialog": "GetSourceDetails",
           "options": {
-            "serverType": "destination"
+            "serverType": "destination",
+            "keyFileName": "public key"
           }
         },
         {
@@ -138,7 +156,7 @@
           "activityProcessed": true,
           "dialog": "Confirmation",
           "options": {
-            "DisplayMessage": "Would you like to proceed ? "
+            "message": "Would you like to proceed ? "
           },
           "resultProperty": "dialog.ConfirmToProceed"
         },
@@ -173,7 +191,7 @@
               "activityProcessed": true,
               "dialog": "Confirmation",
               "options": {
-                "DisplayMessage": "Do you want to provide source server details ?"
+                "message": "Do you want to provide destination server details ?"
               },
               "resultProperty": "dialog.ConfirmToProceed"
             },
@@ -192,7 +210,8 @@
                   "activityProcessed": true,
                   "dialog": "GetSourceDetails",
                   "options": {
-                    "serverType": "source"
+                    "serverType": "destination",
+                    "keyFileName": "public key "
                   }
                 }
               ],
