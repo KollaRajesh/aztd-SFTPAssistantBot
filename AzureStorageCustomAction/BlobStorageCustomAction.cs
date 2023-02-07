@@ -93,55 +93,54 @@ namespace AzureStorageCustomAction
         {
             var partnerName = PartnerName?.GetValue(dc.State);
 
-            var blobJSON = new SFTPDelpoymentBlob(partnerName, GetSourceServerInfo(dc), GetDestinationServerInfo(dc)).Serialize();
-
-            var blobName = $"{partnerName.GetUniqueDeploymentFileName()}.json";
-            var blobURI= await Store.UploadContentAsync(blobJSON, blobName);
+            var blobName = partnerName.GetUniqueDeploymentFileName();
+            var blobURI= await Store.UploadContentAsync(new SFTPDelpoymentBlob(partnerName
+                                                            , await GetSourceServerInfoAsync(dc), await GetDestinationServerInfoAsync(dc))
+                                                            .Serialize()
+                                                     , blobName);
 
             var result = $"{blobName} has been uploaded successfully and file location: {blobURI}";
 
             if (ResultProperty != null)
-            {
                 dc.State.SetValue(this.ResultProperty.GetValue(dc.State), result);
-            }
 
             return await dc.EndDialogAsync(result: result, cancellationToken: cancellationToken);
         }
 
 
-        private  SourceServerInfo GetSourceServerInfo(DialogContext dc)
+        private async  Task<SourceServerInfo> GetSourceServerInfoAsync(DialogContext dialogContext)
         {
-            var hostName = SourceHostName?.GetValue(dc.State);
-            var portNumber = Convert.ToInt32(SourcePortNumber?.GetValue(dc.State));
-            var userName = SourceUserName?.GetValue(dc.State);
-            var password = SourcePassword?.GetValue(dc.State);
-            var sharedFolder = SourceSharedFolder?.GetValue(dc.State);
-            var isFilesEncryptionRequired = Convert.ToBoolean(IsEncryptionRequiredForSource?.GetValue(dc.State));
-            var keyName = PrivateKeyName?.GetValue(dc.State);
-            var keyURL = PrivateKeyURL?.GetValue(dc.State);
+            var hostName = SourceHostName?.GetValue(dialogContext.State);
+            var portNumber = Convert.ToInt32(SourcePortNumber?.GetValue(dialogContext.State));
+            var userName = SourceUserName?.GetValue(dialogContext.State);
+            var password = SourcePassword?.GetValue(dialogContext.State);
+            var sharedFolder = SourceSharedFolder?.GetValue(dialogContext.State);
+            var isFilesEncryptionRequired = Convert.ToBoolean(IsEncryptionRequiredForSource?.GetValue(dialogContext.State));
+            var keyName = PrivateKeyName?.GetValue(dialogContext.State);
+            var keyURL = PrivateKeyURL?.GetValue(dialogContext.State);
 
             string blobURI = string.Empty;
             if (isFilesEncryptionRequired)
-                blobURI = Store.UploadAsync(keyURL, keyName).Result;
+                blobURI = await Store.UploadAsync(keyURL, keyName);
 
             return  new SourceServerInfo(hostName, portNumber, userName, password, sharedFolder,
                                                   isFilesEncryptionRequired, keyName, blobURI);
         }
 
-        private DestinationServerInfo GetDestinationServerInfo(DialogContext dc)
+        private async Task<DestinationServerInfo> GetDestinationServerInfoAsync(DialogContext dialogContext)
         {  
-           var hostName = DestinationHostName?.GetValue(dc.State);
-           var portNumber = Convert.ToInt32(DestinationPortNumber?.GetValue(dc.State));
-           var userName = DestinationUserName?.GetValue(dc.State);
-           var password = DestinationPassword?.GetValue(dc.State);
-           var sharedFolder = DestinationSharedFolder?.GetValue(dc.State);
-           var isFilesEncryptionRequired = Convert.ToBoolean(IsEncryptionRequiredForDestination?.GetValue(dc.State));
-           var keyName = PublicKeyName?.GetValue(dc.State);
-           var keyURL = PublicKeyURL?.GetValue(dc.State);
+           var hostName = DestinationHostName?.GetValue(dialogContext.State);
+           var portNumber = Convert.ToInt32(DestinationPortNumber?.GetValue(dialogContext.State));
+           var userName = DestinationUserName?.GetValue(dialogContext.State);
+           var password = DestinationPassword?.GetValue(dialogContext.State);
+           var sharedFolder = DestinationSharedFolder?.GetValue(dialogContext.State);
+           var isFilesEncryptionRequired = Convert.ToBoolean(IsEncryptionRequiredForDestination?.GetValue(dialogContext.State));
+           var keyName = PublicKeyName?.GetValue(dialogContext.State);
+           var keyURL = PublicKeyURL?.GetValue(dialogContext.State);
 
             string blobURI = string.Empty;
             if (isFilesEncryptionRequired)
-                blobURI =  Store.UploadAsync(keyURL, keyName).Result;
+                blobURI = await Store.UploadAsync(keyURL, keyName);
 
             return new DestinationServerInfo(hostName, portNumber, userName, password, sharedFolder,
                                                   isFilesEncryptionRequired, keyName, blobURI);

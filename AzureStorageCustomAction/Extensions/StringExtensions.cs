@@ -4,10 +4,10 @@ using System.Text;
 
 namespace AzureStorageCustomAction.Extensions
 {
-    internal static class StringExtensions
+    public static class StringExtensions
     {
 
-       internal static string GetUniqueDeploymentFileName(this string partnerName)
+       public static string GetUniqueDeploymentFileName(this string partnerName)
         {
             var hashcode = Guid.NewGuid().GetHashCode();
             hashcode = hashcode > 0 ? hashcode : hashcode * -1;
@@ -15,7 +15,7 @@ namespace AzureStorageCustomAction.Extensions
             return $"{partnerName}-Deployment-{datetime}-{hashcode}.json";
         }
 
-        internal static string GetUniqueKeyFileName(this string environmentName, string keyName)
+        public static string GetUniqueKeyFileName(this string environmentName, string keyName)
         {
             var fileExtension = string.Empty;
             var fileName = keyName;
