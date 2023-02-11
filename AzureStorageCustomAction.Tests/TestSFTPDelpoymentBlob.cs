@@ -6,15 +6,15 @@ using AzureStorageCustomAction.DataStorage;
 
 namespace AzureStorageCustomAction.Tests
 {
-    public class Tests
+    public class TestSFTPDelpoymentBlob
     {
 
-        private  AzureStorage Store;
+        private  AzureStorage azureStorage;
         [SetUp]
         public void Setup()
         {
             var settings = new StorageSettings();
-            Store = new AzureStorage(settings.ConnectionString, settings.ContainerName);
+            azureStorage = new AzureStorage(settings.ConnectionString, settings.ContainerName);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace AzureStorageCustomAction.Tests
             var blobJSON = new SFTPDelpoymentBlob(partnerName, sourceServerInfo, destinationServerInfo).Serialize();
 
             var blobName = partnerName.GetUniqueDeploymentFileName();
-            var blobURI =  Store.UploadContentAsync(blobJSON, blobName).Result;
+            var blobURI =  azureStorage.UploadContentAsync(blobJSON, blobName).Result;
 
             //Assert
             Assert.IsNotEmpty(blobJSON);
