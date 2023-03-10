@@ -36,12 +36,7 @@ namespace VMRunCommandCustomAction.AzureManagementAPI
             location = @"<<Before run\testPlease, Please update Display location here>>";
             tenantId = @"<<Before run\testPlease, Please update tenant location here>>";
 
-            //Config = configuration;
-            //subscriptionId = Config.GetValue<string>("subscriptionId");;
-            //resourceGroupName = Config.GetValue<string>("resourceGroupName");;
-            //vmName = "test-linux-vm01";
-            //location = "East US";
-            //tenantId = Config.GetValue<string>("tenantId");;
+            
 
             // authenticate your client
             armClient = new ArmClient(new DefaultAzureCredential());
