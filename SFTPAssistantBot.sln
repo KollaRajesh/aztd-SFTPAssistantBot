@@ -8,7 +8,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorageCustomAction", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UploadBlobInAzureStorage", "UploadBlobInAzureStorage\UploadBlobInAzureStorage.csproj", "{7748E5F6-8416-4549-A544-81CB12DF698B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureStorageCustomAction.Tests", "AzureStorageCustomAction.Tests\AzureStorageCustomAction.Tests.csproj", "{CAF092C9-880D-42DC-9B8D-3BDB61D0C672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorageCustomAction.Tests", "AzureStorageCustomAction.Tests\AzureStorageCustomAction.Tests.csproj", "{CAF092C9-880D-42DC-9B8D-3BDB61D0C672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMRunCommandCustomAction", "VMRunCommandCustomAction\VMRunCommandCustomAction.csproj", "{52E472F7-77DD-4716-867D-F1177E037E2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMRunCommandCustomAction.Tests", "VMRunCommandCustomAction.Tests\VMRunCommandCustomAction.Tests.csproj", "{545443AC-C439-48BD-B25A-79D6B6D7A18E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,14 @@ Global
 		{CAF092C9-880D-42DC-9B8D-3BDB61D0C672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF092C9-880D-42DC-9B8D-3BDB61D0C672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAF092C9-880D-42DC-9B8D-3BDB61D0C672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E472F7-77DD-4716-867D-F1177E037E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E472F7-77DD-4716-867D-F1177E037E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E472F7-77DD-4716-867D-F1177E037E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E472F7-77DD-4716-867D-F1177E037E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545443AC-C439-48BD-B25A-79D6B6D7A18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545443AC-C439-48BD-B25A-79D6B6D7A18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545443AC-C439-48BD-B25A-79D6B6D7A18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545443AC-C439-48BD-B25A-79D6B6D7A18E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

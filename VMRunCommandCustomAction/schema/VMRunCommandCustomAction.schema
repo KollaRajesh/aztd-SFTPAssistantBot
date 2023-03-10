@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "Virutal Machine Run Command Cutom Action",
+  "description": "Invoke VM Run Command Custom Action ",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+
+    "IpAddress": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "ip address",
+      "description": "ip address to add in hosts"
+    },
+    "FQDN": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Fully Qualified Domain Name",
+      "description": "fully qualified domain name to add in hosts "
+    },
+    "resultProperty": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Result",
+      "description": "Value from callers memory to store the result"
+    }
+  }
+}

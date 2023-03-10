@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AzureStorageCustomAction\AzureStorageCustomAction.csproj" />
+    <ProjectReference Include="..\VMRunCommandCustomAction\VMRunCommandCustomAction.csproj" />
   </ItemGroup>
 </Project>

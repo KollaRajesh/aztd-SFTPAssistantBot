@@ -70,3 +70,37 @@ Deployment will be triggered now```
 
 # SendActivity_cvIYu1_text()
 - hi
+# SendActivity_PvBB0N()
+[Activity
+    Text = ${SendActivity_PvBB0N_text()}
+]
+
+# SendActivity_PvBB0N_text()
+- Sure! I am here to help you 
+# TextInput_Prompt_zXNdKg()
+[Activity
+    Text = ${TextInput_Prompt_zXNdKg_text()}
+]
+
+# TextInput_Prompt_zXNdKg_text()
+- Please enter IP Address
+- May I know IP Address
+- What is the IP Address to add in Hosts
+# TextInput_Prompt_NxioMw()
+[Activity
+    Text = ${TextInput_Prompt_NxioMw_text()}
+]
+
+# TextInput_Prompt_NxioMw_text()
+- Please enter hostname \FQDN
+- May I know FQDN for IP Address ${dialog.IpAddress}
+- What is the  FQDN for IP Address ${dialog.IpAddress}
+- What is the  hostname for IP Address ${dialog.IpAddress}
+- May i know  hostname for IP Address ${dialog.IpAddress} 
+# SendActivity_rDGBq0()
+[Activity
+    Text = ${SendActivity_rDGBq0_text()}
+]
+
+# SendActivity_rDGBq0_text()
+- Result :${user.result}

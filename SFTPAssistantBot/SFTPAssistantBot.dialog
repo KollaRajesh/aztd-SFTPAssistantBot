@@ -214,12 +214,6 @@
             {
               "$kind": "BlobStorageCustomAction",
               "$designer": {
-                "id": "uHAuXo"
-              }
-            },
-            {
-              "$kind": "BlobStorageCustomAction",
-              "$designer": {
                 "id": "Mkvk4I"
               },
               "PartnerName": "=user.partnerName",
@@ -329,6 +323,69 @@
           },
           "activityProcessed": true,
           "dialog": "KeyUpload"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "B8sgUt",
+        "name": "AddHosts"
+      },
+      "intent": "AddHosts",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "PvBB0N"
+          },
+          "activity": "${SendActivity_PvBB0N()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "zXNdKg"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_zXNdKg()}",
+          "property": "dialog.IpAddress"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "NxioMw"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_NxioMw()}",
+          "property": "dialog.fqdn"
+        },
+        {
+          "$kind": "VMRunCommandCustomAction",
+          "$designer": {
+            "id": "gdiVEl"
+          },
+          "IpAddress": "=dialog.IpAddress",
+          "FQDN": "=dialog.fqdn",
+          "resultProperty": "user.result"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rDGBq0"
+          },
+          "activity": "${SendActivity_rDGBq0()}"
         }
       ]
     }

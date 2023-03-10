@@ -20,7 +20,8 @@
         "HelpDialog.en-us",
         "DelayResponseDialog.en-us",
         "KeyUpload.en-us"
-      ]
+      ],
+      "AddHosts": ""
     }
   }
 }

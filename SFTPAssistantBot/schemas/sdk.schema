@@ -342,6 +342,9 @@
     },
     {
       "$ref": "#/definitions/Microsoft.UrlEntityRecognizer"
+    },
+    {
+      "$ref": "#/definitions/VMRunCommandCustomAction"
     }
   ],
   "definitions": {
@@ -4195,6 +4198,9 @@
         },
         {
           "$ref": "#/definitions/Microsoft.UpdateActivity"
+        },
+        {
+          "$ref": "#/definitions/VMRunCommandCustomAction"
         },
         {
           "type": "string",
@@ -9658,6 +9664,51 @@
           ]
         }
       ]
+    },
+    "VMRunCommandCustomAction": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "Virutal Machine Run Command Cutom Action",
+      "description": "Invoke VM Run Command Custom Action ",
+      "type": "object",
+      "required": [
+        "$kind"
+      ],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "IpAddress": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "ip address",
+          "description": "ip address to add in hosts"
+        },
+        "FQDN": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Fully Qualified Domain Name",
+          "description": "fully qualified domain name to add in hosts "
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result",
+          "description": "Value from callers memory to store the result"
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "VMRunCommandCustomAction"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
     },
     "schema": {
       "$schema": "http://json-schema.org/draft-07/schema#",

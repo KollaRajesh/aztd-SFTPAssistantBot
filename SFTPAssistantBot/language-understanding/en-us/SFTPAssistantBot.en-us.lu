@@ -37,6 +37,7 @@
 - Can you help me how to provision resources for SFTP setup
 - how to provision resources for SFTP setup?
 - how setup SFTP?
+- SFTP
 
 
 
@@ -51,3 +52,19 @@
 - Are you there ?
 - you there ?
 - you there?
+
+
+# AddHosts
+> add some example phrases to trigger this intent:
+> - please tell me the weather
+> - what is the weather like in {city=Seattle}
+
+> entity definitions:
+> @ ml city
+
+- I would like to add hosts
+- I would like to add hosts to VM
+- I would like to add entry in hosts for VM
+- Can you assist me to add hosts
+- Can you assist me to add entry in hosts for VM
+- Can you help me how to add hosts in VM
