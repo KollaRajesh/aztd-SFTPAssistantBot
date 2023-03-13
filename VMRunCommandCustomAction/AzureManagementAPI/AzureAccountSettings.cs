@@ -54,7 +54,4 @@ namespace VMRunCommandCustomAction.AzureManagementAPI
               
     }
 }
-        public ArmClient ARMClient { get { return armClient; } }
-              
-    }
-}
+     
