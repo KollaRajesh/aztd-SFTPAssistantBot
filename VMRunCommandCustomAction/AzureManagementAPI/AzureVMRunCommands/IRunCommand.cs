@@ -8,7 +8,7 @@ namespace VMRunCommandCustomAction.AzureManagementAPI.AzureVMRunCommands
     {
         string Name { get; }
         Task<VirtualMachineRunCommandResource> CreateOrUpdateVMRunCommandAync(string ipAddress, string fqdn);
-        
 
+        Task<bool> InvokeShellCommandASync(string ipAddress, string fqdn);
     }
 }

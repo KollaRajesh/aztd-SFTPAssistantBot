@@ -1,16 +1,10 @@
 ﻿using AdaptiveExpressions.Properties;
+using Azure.ResourceManager.Compute;
 using Microsoft.Bot.Builder.Dialogs;
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Azure;
-using Azure.Core;
-using Azure.Identity;
-using Azure.ResourceManager;
-using Azure.ResourceManager.Compute;
-using Azure.ResourceManager.Compute.Models;
-using Azure.ResourceManager.Resources;
 using VMRunCommandCustomAction.AzureManagementAPI.AzureVMRunCommands;
 
 namespace VMRunCommandCustomAction
@@ -65,13 +59,10 @@ namespace VMRunCommandCustomAction
             var result = string.Empty;
 
             AddHostRunCommand command = new AddHostRunCommand();
-            VirtualMachineRunCommandResource vmRunCmdResource =  command.CreateOrUpdateVMRunCommandAync(ipAddress, fqdn).Result;
-            
-            if (vmRunCmdResource.HasData)
-            {
-                VirtualMachineRunCommandData runCmd = vmRunCmdResource.Data;
-                result = $"Adding IpAddress {ipAddress} and FQDN\\HostName {fqdn} to Host file is {runCmd.ProvisioningState}.";
-            }
+            bool  cmdResult= command.InvokeShellCommandASync(ipAddress, fqdn).Result;
+
+            result= cmdResult? $"IpAddress {ipAddress} and FQDN\\HostName {fqdn} has beem added to hosts file."
+                            : $"There is issue while calling invoke command to add IpAddress {ipAddress} and FQDN\\HostName {fqdn} to hosts file.";
 
             if (ResultProperty != null)
             {
